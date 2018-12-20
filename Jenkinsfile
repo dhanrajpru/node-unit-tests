@@ -15,9 +15,9 @@ pipeline {
      
        post{
             always{
-                dir ( "/var/lib/jenkins/jobs/test/node-unit-test/" ) {
-                     step([$class: 'CheckStylePublisher', pattern: 'eslint.xml', unstableTotalAll: '0', usePreviousBuildAsReference: true])
+                 
+                     step([$class: 'CheckStylePublisher', pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml', unstableTotalAll: '0', usePreviousBuildAsReference: true])
                 }
             }
        }
-  }
+  
