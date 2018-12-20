@@ -13,13 +13,9 @@ pipeline {
         }
     }
      
-       post{
+        post{
             step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml'])
             
-            }
+        }
                  
-         } 
-    
-      
-       
-  
+} 
