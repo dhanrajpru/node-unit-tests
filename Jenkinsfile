@@ -15,7 +15,9 @@ pipeline {
      
        post{
             always{
+                dir ( "./test/nodeunit-test" ) {
                 step([$class: 'CheckStylePublisher', pattern: '**/eslint.xml', unstableTotalAll: '0', usePreviousBuildAsReference: true])
             }
         }
      }
+}
