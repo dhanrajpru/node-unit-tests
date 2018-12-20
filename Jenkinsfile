@@ -15,10 +15,7 @@ pipeline {
      
        post{
             always{
-                step([$class: 'CheckStylePublisher',
-                pattern: '/eslint.xml',
-                unstableTotalAll: '0',
-                usePreviousBuildAsReference: true])
+                step([$class: 'CheckStylePublisher', pattern: '**/eslint.xml', unstableTotalAll: '0', usePreviousBuildAsReference: true])
             }
         }
      }
