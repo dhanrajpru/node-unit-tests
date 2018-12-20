@@ -8,7 +8,7 @@ pipeline {
         }
         stage("run eslint"){
             steps{
-                sh "eslint -c /usr/local/lib/node_modules/eslint/conf/eslint-recommended.js -f checkstyle ./ > eslint.xml"
+                sh "eslint /usr/local/lib/node_modules/eslint/conf/eslint-recommended.js -f checkstyle ./ > eslint.xml"
             }
         }
     }
