@@ -15,7 +15,7 @@ pipeline {
      
        post{
             
-           step([$class: 'CheckStylePublisher',
+           step([class: 'CheckStylePublisher',
                  pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml',
                  unstableTotalAll: '0',
                  usePreviousBuildAsReference: true])
