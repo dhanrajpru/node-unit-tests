@@ -14,7 +14,7 @@ pipeline {
     }
      
        post{
-            step([\$class: 'CheckStylePublisher', pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml', unstableTotalAll: '0'])
+            step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml', unstableTotalAll: '0'])
            
            
              }
