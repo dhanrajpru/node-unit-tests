@@ -14,10 +14,11 @@ pipeline {
     }
      
        post{
-            always{
-                 
-                     step([$class: 'CheckStylePublisher', pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml', unstableTotalAll: '0'])
-                }
-            }
-       }
+            step([$class: 'CheckStylePublisher', pattern: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml', unstableTotalAll: '0'])
+           
+           
+             }
+    
+         }
+       
   
