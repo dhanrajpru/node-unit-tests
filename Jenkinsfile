@@ -13,11 +13,11 @@ pipeline {
         }
     }
      
-    post {
+    /*post {
         always{
             dir ("/var/lib/jenkins/workspace/test/") {
               step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'eslint.xml'])
             }
         }
-    }
+    }*/
 } 
