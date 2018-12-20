@@ -16,7 +16,7 @@ pipeline {
     post {
         always{
             dir ("./test") {
-              step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'eslint.xml'])
+              step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: './eslint.xml'])
             }
         }
     }
