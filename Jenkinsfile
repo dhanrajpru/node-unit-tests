@@ -14,9 +14,10 @@ pipeline {
     }
      
     post {
-        dir ("/var/lib/jenkins/jobs/test/node-unit-test/") {
-            step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'eslint.xml'])
-
+        always{
+            dir ("/var/lib/jenkins/jobs/test/node-unit-test/") {
+              step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: 'eslint.xml'])
+            }
         }
     }
 } 
