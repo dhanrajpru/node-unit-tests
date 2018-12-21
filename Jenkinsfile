@@ -10,7 +10,7 @@ pipeline {
             steps{
                 sh "npm install"
                 //sh "npm run coverage"
-                sh "eslint -f json -o report.json ."
+                //sh "eslint -f json -o report.json ."
             }
         }
         stage("run sonarqube"){
