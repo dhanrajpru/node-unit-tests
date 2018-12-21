@@ -6,20 +6,16 @@ pipeline {
                 checkout scm
             }
         }
-        stage("run eslint"){
+        stage("unit testing"){
             steps{
-                sh "eslint -c /usr/local/lib/node_modules/eslint/conf/eslint-recommended.js -f checkstyle ./ > eslint.xml"
+                sh "npm run npm run coverage"
+                sh "eslint -f json -o report.json ."
+            }
+        }
+        stage("run sonarqube"){
+            steps{
+                sh "sonar-scanner"
             }
         }
     }
-     
-        post{
-            step([$class: 'hudson.plugins.checkstyle.CheckStylePublisher', checkstyle: '/var/lib/jenkins/jobs/test/node-unit-test/eslint.xml'])
-            
-        }
-                 
-    } 
-    
-      
-       
-  
+}     
