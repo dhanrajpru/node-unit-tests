@@ -8,11 +8,13 @@ pipeline {
         }
         stage("unit testing"){
             steps{
-                 withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']
-                 sh "npm install"
+                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']{
+                   sh "npm install"
                 //sh "npm run coverage"
                 //sh "eslint -f json -o report.json ."
-            }
+                }
+                }
+                        
         }
         stage("run sonarqube"){
             steps{
