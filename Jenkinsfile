@@ -8,6 +8,7 @@ pipeline {
         }
         stage("unit testing"){
             steps{
+                sh "npm install"
                 sh "npm run npm run coverage"
                 sh "eslint -f json -o report.json ."
             }
